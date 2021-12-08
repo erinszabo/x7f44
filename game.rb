@@ -11,7 +11,8 @@ class Game
   end
 
   def over?
-    box.shut? || box.can_flip_for?(dice.map(&:roll_value).reduce(:+))
+    # shut or nothing to flip
+    box.shut? || box.possible_flips?(dice, box.tiles) # dice.map(&:roll_value).reduce(:+)
   end
 
   def start!

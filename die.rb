@@ -13,4 +13,8 @@ class Die
     self.roll_value = @rand_num.rand(1..number_of_sides)
   end
 
+  def to_s
+    puts "die value = #{roll_value}"
+  end
+
 end
