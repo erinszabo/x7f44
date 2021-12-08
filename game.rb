@@ -21,19 +21,32 @@ class Game
 
   def play
     prepare_next_round
-    print '| '
-    box.tiles.each do |tile|
-      print tile.to_s + ' | '
-    end
+    display_tiles
+    display_roll
+    chose_flip
+    prepare_next_round
+  end
+
+  def display_roll
     print "\n"
     print "You rolled: "
     dice.each do |die|
       print "#{die.roll_value} "
     end
+  end 
+
+  def display_tiles
+    print '| '
+    box.tiles.each do |tile|
+      print tile.to_s + ' | '
+    end
+  end
+
+
+  def chose_flip
     puts "\n"
     puts "Which tiles would you like to flip (separate by spaces): "
     tiles_to_flip = gets.chomp
-    prepare_next_round
   end
 
   def results
