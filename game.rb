@@ -1,7 +1,8 @@
 class Game
 
   WELCOME_MESSAGE = "Welcome to Shut da Box!"
-  Win_Message = "You shut da box!"
+  win_message = "You shut da box!"
+  lose_message = "Game over, you did not shut da box."
 
   attr_reader :box, :dice
 
@@ -13,10 +14,6 @@ class Game
   def over?
     box.shut? || box.possible_flips?(dice, box.tiles) 
   end
-
-  # def start!
-  #   prepare_next_round
-  # end
 
   def prepare_next_round
     dice.each(&:roll!)
@@ -40,7 +37,7 @@ class Game
   end
 
   def results
-    box.shut? ? Win_Message : "Game over, you did not shut da box."
+    box.shut? ? win_message : lose_message
   end
 
 end
