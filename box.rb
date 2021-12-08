@@ -17,11 +17,13 @@ class Box
     @tiles.empty? && @shut_tiles.length == number_of_tiles
   end
 
-  def possible_flips?(dice, tiles) # dice.map(&:roll_value).reduce(:+)
-    # false
+  def possible_flips?(dice, tiles_left) # dice.map(&:roll_value).reduce(:+)
     # check if the sum of the dice can equal any sum of the tiles left to flip
-    # dice.map(&:roll_value).reduce(:+)
-    true
+    dice_sum = dice.map(&:roll_value).reduce(:+)
+    # tiles_left.reduce(:+) > dice_sum
+    # ^something with this, running out of time^
+    # true
+    false
   end
 
 end
