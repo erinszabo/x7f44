@@ -1,8 +1,6 @@
 class Die
 
-  attr_reader :number_of_sides
-  attr_accessor :roll_value
-  attr_reader :rand_num
+  attr_reader :number_of_sides, :roll_value
 
   def initialize(number_of_sides, rand_num = Random.new)
     @number_of_sides = number_of_sides
