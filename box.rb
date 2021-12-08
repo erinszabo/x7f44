@@ -22,8 +22,8 @@ class Box
     dice_sum = dice.map(&:roll_value).reduce(:+)
     # tiles_left.reduce(:+) > dice_sum
     # ^something with this, running out of time^
-    # true
-    false
+    true
+    # false
   end
 
 end

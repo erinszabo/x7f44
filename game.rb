@@ -14,15 +14,16 @@ class Game
     box.shut? || box.possible_flips?(dice, box.tiles) 
   end
 
-  def start!
-    prepare_next_round
-  end
+  # def start!
+  #   prepare_next_round
+  # end
 
   def prepare_next_round
     dice.each(&:roll!)
   end
 
   def play
+    prepare_next_round
     print '| '
     box.tiles.each do |tile|
       print tile.to_s + ' | '
