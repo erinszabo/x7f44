@@ -1,6 +1,7 @@
 class Die
 
-  attr_reader :number_of_sides, :roll_value
+  attr_reader :number_of_sides
+  attr_accessor :roll_value
 
   def initialize(number_of_sides, rand_num = Random.new)
     @number_of_sides = number_of_sides
@@ -9,7 +10,7 @@ class Die
   end
 
   def roll!
-    self.roll_value = rand_num.rand(1..number_of_sides)
+    self.roll_value = @rand_num.rand(1..number_of_sides)
   end
 
 end
